@@ -96,23 +96,29 @@ const flowjoel = addKeyword(['1'])
 
 const main = async () => {
   try {
+    console.log('Iniciando conexión a MongoDB...')
     const adapterDB = new MongoAdapter({
       dbUri: process.env.MONGO_DB_URI,
       dbName: "JsManuel"
     })
 
-    // Initialize the database connection
+    // Inicializar la conexión a la base de datos
     await adapterDB.init()
-  const adapterFlow = createFlow([flowWelcome,menuReserv,flowjoel,recolectarDatos])
-  const adapterProvider = createProvider(BaileysProvider)
+    console.log('Conexión a MongoDB establecida con éxito')
 
-  createBot({
-    flow: adapterFlow,
-    provider: adapterProvider,
-    database: adapterDB,
-  })
+    const adapterFlow = createFlow([flowWelcome, menuReserv, flowjoel, recolectarDatos])
+    const adapterProvider = createProvider(BaileysProvider)
 
-  QRPortalWeb()
+    createBot({
+      flow: adapterFlow,
+      provider: adapterProvider,
+      database: adapterDB,
+    })
+
+    QRPortalWeb()
+  } catch (error) {
+    console.error('Error al inicializar el bot:', error)
+  }
 }
 
-main()
+main().catch(err => console.error('Error no manejado:', err))
