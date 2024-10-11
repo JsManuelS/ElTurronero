@@ -1,0 +1,308 @@
+[handleMsg]:  {
+  key: {
+    remoteJid: '51910387988@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB058DCFD36B758535B9E',
+    participant: undefined
+  },
+  messageTimestamp: 1728669004,
+  pushName: 'JsManuel',
+  broadcast: false,
+  message: Message {
+    conversation: 'hoia',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'hoia',
+  from: '51910387988'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_d31890f9-e4d2-4172-9d5f-deb32bdcdfc7',
+  keyword: 'key_0f792f59-6c25-4063-8ec1-2bdd254246fc',
+  answer: '🎉¡Bienvenid@ a El Turronero! 🎉\n' +
+    '😄Nos alegra tenerte aquí y estamos listos para ofrecerte los mejores turrones. 🍬✨\n' +
+    '👇Echa un vistazo a nuestro delicioso turrones🤤:\n',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '22f99e9fb7eb3844bba1da147602d126'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_28d11f99-cf0d-4c68-8e94-99aaeab46256',
+  keyword: 'ans_d31890f9-e4d2-4172-9d5f-deb32bdcdfc7',
+  answer: '📝Nuestro Productos Disponibles: 📜\n',
+  options: {
+    media: 'https://i.postimg.cc/XNrcq7d6/turron-joel-en-caja-16-turron-joel.png',
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'c222380f87361684ccc1538721754275'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_8c75c3ff-512a-4e6d-a125-1bef5189a4d6',
+  keyword: 'ans_28d11f99-cf0d-4c68-8e94-99aaeab46256',
+  answer: '"*RESERVAR POR WHATSAPP*" ',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'e97beaa61158918830a0244ba4741994'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_74fc7d1e-f3d9-4347-8a79-e1829b144d92',
+  keyword: 'ans_8c75c3ff-512a-4e6d-a125-1bef5189a4d6',
+  answer: 'Escribe la Letra *R* para reserva tu Turron: "*RESERVAR POR AQUI*" ',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '2e8159eb447b92d20b87297bc66e8fc7'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_5b8437cc-7963-4928-bb20-5a6b39f130f3',
+  keyword: 'ans_74fc7d1e-f3d9-4347-8a79-e1829b144d92',
+  answer: '"*🚚 ¡Entregas disponibles solo los Martes y Jueves por WhatsApp! 📅📲*"',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '0fa1f2aedc4f7633be5a1f6d203d6dfb'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_a9e5d456-5757-4c33-8cf1-e92a99d05a3e',
+  keyword: 'ans_5b8437cc-7963-4928-bb20-5a6b39f130f3',
+  answer: '"*RESERVAR POR PAGINA WEB*" ',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '0507ed4a91fe878dee7701ca2fe876c5'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_772ff28a-558c-46fe-8997-946188e8c972',
+  keyword: 'ans_a9e5d456-5757-4c33-8cf1-e92a99d05a3e',
+  answer: '🍽️ O Tambien ¡Haz tu reserva ahora! 👇\n' +
+    'Aquí tienes el enlace:👇Reserva aquí👇 https://script.google.com/macros/s/AKfycbw55M5alwCk5OfUu1lRwkmAtDZxYKOv-z7Xl3uOO8ZzeCuKWEiMaUpjp1etYMbwDAlO2A/exec',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'c44e1080e20061cc2ebb4fa06e538be6'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_785f03eb-9f11-4c6a-8993-b000d5b48501',
+  keyword: 'ans_772ff28a-558c-46fe-8997-946188e8c972',
+  answer: '"*🚚 ¡La entrega se realiza el día que desees o inmediata a través de la página web! 📅*"',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: '408bc42e967f6a760156949d177381db'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '51910387988@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB05A3B298AF4AB345456',
+    participant: undefined
+  },
+  messageTimestamp: 1728669023,
+  pushName: 'JsManuel',
+  broadcast: false,
+  message: Message {
+    conversation: 'r',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'r',
+  from: '51910387988'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_df76166f-a877-4eef-9a3e-f35ed0e1605e',
+  keyword: 'key_219b4c08-60ab-48d5-a796-00b33e73ee78',
+  answer: '🔍 *MENÚ DE TURRONES*\n' +
+    '\n' +
+    '1️⃣ Turrón Joel - S/20.00\n' +
+    '\n' +
+    'Para hacer tu pedido, escribe el número de la opción que deseas.\n' +
+    'Por ejemplo, escribe *1* para el Turrón Joel',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'd231578a4cfe596a087ce357584bedf7'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '51910387988@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0F845678C8C91D63E50',
+    participant: undefined
+  },
+  messageTimestamp: 1728669026,
+  pushName: 'JsManuel',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '1',
+  from: '51910387988'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '51910387988@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB08F26620BA4082F578B',
+    participant: undefined
+  },
+  messageTimestamp: 1728669028,
+  pushName: 'JsManuel',
+  broadcast: false,
+  message: Message {
+    conversation: '1',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: '1',
+  from: '51910387988'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_3c2c47ab-a9b5-4af9-b229-b3b31308928b',
+  keyword: 'key_71eb4d03-970a-41a1-add4-06c49d50cfaf',
+  answer: 'Has seleccionado el Turrón Joel',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: 'd3c91ea885fb6c2c48324bf35611e295'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_38b2b402-e94e-4fc1-b2fe-3509c183737d',
+  keyword: 'ans_3c2c47ab-a9b5-4af9-b229-b3b31308928b',
+  answer: '¿Deseas pedir otro turrón?\n' +
+    '👉 Escribe *1* para hacer otro pedido\n' +
+    '👉 Escribe *No* para culminar tu pedido',
+  options: {
+    media: null,
+    buttons: [],
+    capture: true,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: true
+  },
+  refSerialize: '367cced22ee13cae1cb0ba0d2563ed50'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '51910387988@s.whatsapp.net',
+    fromMe: false,
+    id: '3EB0445169ADCF6F290D07',
+    participant: undefined
+  },
+  messageTimestamp: 1728669031,
+  pushName: 'JsManuel',
+  broadcast: false,
+  message: Message {
+    conversation: 'no',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'no',
+  from: '51910387988'
+}
