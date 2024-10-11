@@ -3,12 +3,11 @@
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
-   "scripts": {
-    "start": "node app.js",
-    "dev": "NODE_ENV=development npm run lint && npm install && npm start",
-    "lint": "eslint . --no-ignore",
-    "pre-copy": "cd .. && npm run copy.lib base-baileys-memory"
-  },
+    "scripts": {
+        "prestart": "npx eslint . --no-ignore",
+        "pre-copy": "cd .. && npm run  copy.lib base-baileys-memory",
+        "start": "node app.js"
+    },
     "keywords": [],
     "dependencies": {
         "@adiwajshing/baileys": "^5.0.0",
