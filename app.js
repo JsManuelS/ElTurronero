@@ -89,74 +89,20 @@ const flowjoel = addKeyword(['1'])
         }
     });
 
-/*
-const flowsanjose = addKeyword(['2'])
-    .addAnswer('Has seleccionado el Turrón San José', null, async (_, { flowDynamic }) => {
-        const total = agregarPedido('Turrón San José', 38);
-        await flowDynamic([
-            '✅ Realizaste un pedido del Turrón San José por S/ 38.00',
-            `💰 Total actual de tu pedido: S/ ${total.toFixed(2)}`
-        ]);
-    })
-    .addAnswer([
-        '¿Deseas pedir otro turrón?',
-        '👉 Escribe *Si* para hacer otro pedido',
-        '👉 Escribe *No* culminar tu pedido'
-    ],
-    { capture: true },
-    async (ctx, { gotoFlow, flowDynamic }) => {
-        const respuesta = ctx.body.toLowerCase();
-        if (respuesta === 'si') {
-            await flowDynamic('¡Perfecto! Volvamos al menú de turrones. 📋');
-            return gotoFlow(menuReserv);
-        } else if (respuesta === 'no') {
-            return gotoFlow(recolectarDatos);
-        } else {
-            await flowDynamic('❌ Por favor, responde *Si* o *No*');
-            return false;
-        }
-    });
-
-// Flujo Doña Pepa
-const flowdoñapepa = addKeyword(['3'])
-    .addAnswer('Has seleccionado el Turrón Doña Pepa', null, async (_, { flowDynamic }) => {
-        const total = agregarPedido('Turrón Doña Pepa', 30);
-        await flowDynamic([
-            '✅ Realizaste un pedido del Turrón Doña Pepa por S/ 30.00',
-            `💰 Total actual de tu pedido: S/ ${total.toFixed(2)}`
-        ]);
-    })
-    .addAnswer([
-        '¿Deseas pedir otro turrón?',
-        '👉 Escribe *Si* para hacer otro pedido',
-        '👉 Escribe *No* para proceder con tus datos de contacto'
-    ],
-    { capture: true },
-    async (ctx, { gotoFlow, flowDynamic }) => {
-        const respuesta = ctx.body.toLowerCase();
-        if (respuesta === 'si') {
-            await flowDynamic('¡Perfecto! Volvamos al menú de turrones. 📋');
-            return gotoFlow(menuReserv);
-        } else if (respuesta === 'no') {
-            return gotoFlow(recolectarDatos);
-        } else {
-            await flowDynamic('❌ Por favor, responde *Si* o *No*');
-            return false;
-        }
-    });
-  
-*/
-
     const recolectarDatos = addKeyword(['RECOLECTAR_DATOS'])
     .addAnswer('🙌 *Gracias por tu compra* 🙌')
     .addAnswer('Nos estaremos comunicando contigo en las próximas horas para coordinar la entrega de tu pedido. 📦✨')
     .addAnswer('Si tienes alguna consulta, no dudes en escribirnos. ¡Que disfrutes de tu turrón! 😋.')         
 
 const main = async () => {
-  const adapterDB = new MongoAdapter ({
-        dbUri: process.env.MONGO_DB_URI,
-        dbName: "JsManuel"
-  })
+  try {
+    const adapterDB = new MongoAdapter({
+      dbUri: process.env.MONGO_DB_URI,
+      dbName: "JsManuel"
+    })
+
+    // Initialize the database connection
+    await adapterDB.init()
   const adapterFlow = createFlow([flowWelcome,menuReserv,flowjoel,recolectarDatos])
   const adapterProvider = createProvider(BaileysProvider)
 
