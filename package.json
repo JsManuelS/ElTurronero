@@ -4,8 +4,8 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "prestart": "npx eslint . --no-ignore",
-        "pre-copy": "cd .. && npm run  copy.lib base-baileys-memory",
+        "prestart": "if [ \"$NODE_ENV\" != \"production\" ]; then npx eslint . --no-ignore; fi",
+        "pre-copy": "cd .. && npm run copy.lib base-baileys-memory",
         "start": "node app.js"
     },
     "keywords": [],
