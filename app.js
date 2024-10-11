@@ -94,12 +94,21 @@ const flowjoel = addKeyword(['1'])
     .addAnswer('Nos estaremos comunicando contigo en las próximas horas para coordinar la entrega de tu pedido. 📦✨')
     .addAnswer('Si tienes alguna consulta, no dudes en escribirnos. ¡Que disfrutes de tu turrón! 😋.')         
 
+
 const main = async () => {
   try {
     console.log('Iniciando conexión a MongoDB...')
     const adapterDB = new MongoAdapter({
       dbUri: process.env.MONGO_DB_URI,
-      dbName: "JsManuel"
+      dbName: "JsManuel",
+      options: {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        ssl: true,
+        sslValidate: false,
+        socketTimeoutMS: 30000,
+        connectTimeoutMS: 30000,
+      }
     })
 
     // Inicializar la conexión a la base de datos
