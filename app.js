@@ -5,6 +5,7 @@ const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 //const MockAdapter = require('@bot-whatsapp/database/mock')
 const MongoAdapter = require('@bot-whatsapp/database/mongo')
+const { MongoClient } = require('mongodb');
 
 
 //Bienvenida
@@ -98,22 +99,30 @@ const flowjoel = addKeyword(['1'])
 const main = async () => {
   try {
     console.log('Iniciando conexión a MongoDB...')
+    const mongoUri = process.env.MONGO_DB_URI
+    console.log('URI de MongoDB:', mongoUri) // Asegúrate de no mostrar la contraseña completa en los logs
+
+    // Primero, verifica la conexión directamente con el cliente de MongoDB
+    const client = new MongoClient(mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      socketTimeoutMS: 30000,
+      connectTimeoutMS: 30000,
+    });
+
+    await client.connect();
+    console.log('Conexión directa a MongoDB establecida con éxito');
+    await client.close();
+
+    // Ahora, intenta la conexión con MongoAdapter
     const adapterDB = new MongoAdapter({
-      dbUri: process.env.MONGO_DB_URI,
+      dbUri: mongoUri,
       dbName: "JsManuel",
-      options: {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        ssl: true,
-        sslValidate: false,
-        socketTimeoutMS: 30000,
-        connectTimeoutMS: 30000,
-      }
     })
 
     // Inicializar la conexión a la base de datos
     await adapterDB.init()
-    console.log('Conexión a MongoDB establecida con éxito')
+    console.log('Conexión a MongoDB con MongoAdapter establecida con éxito')
 
     const adapterFlow = createFlow([flowWelcome, menuReserv, flowjoel, recolectarDatos])
     const adapterProvider = createProvider(BaileysProvider)
@@ -127,7 +136,18 @@ const main = async () => {
     QRPortalWeb()
   } catch (error) {
     console.error('Error al inicializar el bot:', error)
+    // Intenta loguear más detalles del error
+    if (error.stack) {
+      console.error('Stack trace:', error.stack)
+    }
+    if (error.code) {
+      console.error('Código de error:', error.code)
+    }
+    process.exit(1) // Termina el proceso con un código de error
   }
 }
 
-main().catch(err => console.error('Error no manejado:', err))
+main().catch(err => {
+  console.error('Error no manejado:', err)
+  process.exit(1)
+})
