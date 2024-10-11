@@ -4,7 +4,6 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "prestart": "if [ \"$NODE_ENV\" != \"production\" ]; then npx eslint . --no-ignore; fi",
         "pre-copy": "cd .. && npm run copy.lib base-baileys-memory",
         "start": "node app.js"
     },
@@ -31,3 +30,4 @@
     "author": "",
     "license": "ISC"
 }
+
