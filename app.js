@@ -3,10 +3,8 @@ require("dotenv").config()
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
-//const MockAdapter = require('@bot-whatsapp/database/mock')
 const MongoAdapter = require('@bot-whatsapp/database/mongo')
 const { MongoClient } = require('mongodb');
-
 
 //Bienvenida
 const flowWelcome = addKeyword(EVENTS.WELCOME)
@@ -100,9 +98,9 @@ const main = async () => {
   try {
     console.log('Iniciando conexión a MongoDB...')
     const mongoUri = process.env.MONGO_DB_URI
-    console.log('URI de MongoDB:', mongoUri) // Asegúrate de no mostrar la contraseña completa en los logs
+    console.log('URI de MongoDB:', mongoUri.replace(/\/\/.*@/, '//****:****@')) // Oculta las credenciales en los logs
 
-    // Primero, verifica la conexión directamente con el cliente de MongoDB
+    // Prueba de conexión directa con MongoDB
     const client = new MongoClient(mongoUri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -114,36 +112,37 @@ const main = async () => {
     console.log('Conexión directa a MongoDB establecida con éxito');
     await client.close();
 
-    // Ahora, intenta la conexión con MongoAdapter
+    // Conexión con MongoAdapter
     const adapterDB = new MongoAdapter({
       dbUri: mongoUri,
       dbName: "JsManuel",
     })
 
-    // Inicializar la conexión a la base de datos
+    console.log('Iniciando MongoAdapter...')
     await adapterDB.init()
-    console.log('Conexión a MongoDB con MongoAdapter establecida con éxito')
+    console.log('MongoAdapter iniciado con éxito')
 
     const adapterFlow = createFlow([flowWelcome, menuReserv, flowjoel, recolectarDatos])
     const adapterProvider = createProvider(BaileysProvider)
 
+    console.log('Creando bot...')
     createBot({
       flow: adapterFlow,
       provider: adapterProvider,
       database: adapterDB,
     })
 
+    console.log('Bot creado con éxito')
     QRPortalWeb()
   } catch (error) {
     console.error('Error al inicializar el bot:', error)
-    // Intenta loguear más detalles del error
     if (error.stack) {
       console.error('Stack trace:', error.stack)
     }
     if (error.code) {
       console.error('Código de error:', error.code)
     }
-    process.exit(1) // Termina el proceso con un código de error
+    process.exit(1)
   }
 }
 
